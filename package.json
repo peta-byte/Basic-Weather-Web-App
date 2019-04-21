@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js",
+    "watch": "nodemon src/index.js"
   },
   "dependencies": {
     "ejs": "2.6.1",
