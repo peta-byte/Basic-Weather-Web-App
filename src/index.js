@@ -2,7 +2,7 @@ const request = require("request");
 const express = require("express");
 const app = express();
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 const WEATHER_API = "https://www.metaweather.com/api";
 
 const getConsolidatedWeather = (
