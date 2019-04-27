@@ -79,4 +79,3 @@ app.post("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}.`);
 });
-© 2019 GitHub, Inc.
