@@ -2,10 +2,15 @@ const request = require("request");
 const express = require("express");
 const app = express();
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 const WEATHER_API = "https://www.metaweather.com/api";
 
-var getConsolidatedWeather = (locationID, locationName, locationType, res) => {
+const getConsolidatedWeather = (
+  locationID,
+  locationName,
+  locationType,
+  res
+) => {
   let options = {
     url: `${WEATHER_API}/location/${locationID}`,
     method: "GET"
@@ -24,15 +29,14 @@ var getConsolidatedWeather = (locationID, locationName, locationType, res) => {
       let body = JSON.parse(response.body);
       let consolidatedWeather = body.consolidated_weather;
       let weatherStateName = consolidatedWeather[0].weather_state_name;
-      let date = new Date(
-        consolidatedWeather[0].applicable_date
-      ).toDateString();
-      res.render("weatherData", {
-        locationName,
-        locationType,
-        date,
-        weatherStateName
-      });
+      let date = consolidatedWeather[0].applicable_date;
+      let data = {
+        location: locationName,
+        type: locationType,
+        date: new Date(date).toDateString(),
+        name: weatherStateName
+      };
+      res.render("weatherData", data);
     }
   });
 };
@@ -75,3 +79,4 @@ app.post("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}.`);
 });
+© 2019 GitHub, Inc.
