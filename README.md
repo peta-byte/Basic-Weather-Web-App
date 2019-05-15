@@ -8,4 +8,7 @@ It uses the MetaWeather API to get the next day forecasts of different locations
 
 It's was built with JavaScript (with some syntax from ES2015+), HTML (using ejs as the templating engine), and CSS.
 
+It was written in codesandbox.io and is deployed in codesandbox.io as well as Heroku.
+
+
 ![Gif](https://user-images.githubusercontent.com/40006302/57744714-fbe4fd80-768f-11e9-8927-4cd5d036a6fd.gif)
