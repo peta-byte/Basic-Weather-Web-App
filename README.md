@@ -1,10 +1,8 @@
 # RockCity Hacks - Basic-Weather-Web-App
 
-A basic full-stack web application that uses the MetaWeather API to retrieve the next day's weather condition and displays it on the UI.
+A basic full-stack web application that uses the MetaWeather API to retrieve the next day's weather condition, for different locations, and displays it on the UI.
 
 This was an example of basic front-end and back-end web application development in JavaScript for the inaugural RockCity Hacks in 2019 - a hackathon for high school students.
-
-It uses the MetaWeather API to get the next day forecasts of different locations.
 
 It's was built with JavaScript (with some syntax from ES2015+), HTML (using ejs as the templating engine), and CSS.
 
