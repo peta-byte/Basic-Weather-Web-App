@@ -18,13 +18,8 @@ const getConsolidatedWeather = (
   // 2nd request
   request(options, (error, response) => {
     if (error) {
-      console.log(`Error from the 2nd request: ${error}`);
     } else if (response.statusCode !== 200) {
-      console.log(
-        `2nd request: A different response code of ${
-          response.statusCode
-        } and a body: ${response.body}`
-      );
+      // alt code
     } else {
       let body = JSON.parse(response.body);
       let consolidatedWeather = body.consolidated_weather;
@@ -59,13 +54,9 @@ app.post("/", (req, res) => {
   // 1st Request
   request(options, (error, response) => {
     if (error) {
-      console.log(`Error: ${error}`);
+      throw error;
     } else if (response.statusCode !== 200) {
-      console.log(
-        `No error. A different response code of ${
-          response.statusCode
-        } and a body: ${response.body}`
-      );
+      // alt code
     } else {
       let body = JSON.parse(response.body);
       let woeID = body[0].woeid;
@@ -76,6 +67,4 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}.`);
-});
+app.listen(PORT);
